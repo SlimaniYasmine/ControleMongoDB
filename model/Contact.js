@@ -1,10 +1,9 @@
 class Contact{
-    constructor(Nom, Prénom , Email , age )
-    {
-        this.Nom=Nom;
-        this.Prénom=Prénom;
-        this.Email=Email;
-        this.age=age;
-    }
+    constructor(nom, prenom, email, age) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.age = age;
+      }
 }
 module.exports ={ Contact };
