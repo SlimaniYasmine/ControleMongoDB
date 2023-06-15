@@ -1,5 +1,11 @@
 const express = require("express");
-const { ajouterContact } = require("../Controller/Contact");
+const { ajouterContact, afficherListeContacts, afficherContactsAgeSup18, afficherContactsAgeSup18AvecNomAh, supprimerContactsMoinsDe5Ans, changerPrenomContact } = require("../Controller/Contact");
 const Router = express.Router();
-Router.route("/contacts").post(ajouterContact);
+Router.route('/contacts').post(ajouterContact);
+Router.route("/allcontacts18H").get(afficherContactsAgeSup18AvecNomAh);
+Router.route("/allcontacts").get(afficherListeContacts);
+//Router.route("/:id").get(afficherContactParId);
+Router.route("/sup18").get(afficherContactsAgeSup18);
+Router.route("/ContactsMoinsDe5Ans").delete(supprimerContactsMoinsDe5Ans);
+Router.route("/changer").put(changerPrenomContact);
 module.exports = Router;
